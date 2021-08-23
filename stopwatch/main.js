@@ -1,6 +1,5 @@
 const timer = document.getElementById('stopwatch');
 
-var hr = 0;
 var min = 0;
 var sec = 0;
 var msec = 0; // milli second
@@ -23,7 +22,7 @@ function timerCycle() {
 
         sec = parseInt(sec);
         min = parseInt(min);
-        hr = parseInt(hr);
+        
         msec = parseInt(msec);
 
         msec = msec + 10;
@@ -50,9 +49,7 @@ function timerCycle() {
         if (min < 10 || min == 0) {
             min = '0' + min;
         }
-        if (hr < 10 || hr == 0) {
-            hr = '0' + hr;
-        }
+        
         // some formatting
         // milli secs
         if (msec < 10 || msec == 0) {cms = '0' + String(msec);}
@@ -62,18 +59,18 @@ function timerCycle() {
 
         
         
-        timer.innerHTML = hr + ':' + min + ':' + sec + ':' + cms;
+        timer.innerHTML = min + ':' + sec + ':' + cms;
         
         setTimeout("timerCycle()", 10);
     }
 }
 
 function resetTimer() {
-    timer.innerHTML = '00:00:00:00';
+    timer.innerHTML = '00:00:00';
 }
 
 function resetTimer() {
-    timer.innerHTML = "00:00:00:00";
+    timer.innerHTML = "00:00:00";
     stoptime = true;
     hr = 0;
     sec = 0;
